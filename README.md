@@ -1,5 +1,3 @@
-**README**
-
 1. **Create K8 cluster**
 
    ```
