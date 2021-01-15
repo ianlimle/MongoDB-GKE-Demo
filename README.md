@@ -1,9 +1,5 @@
 **README**
 
-![image-20210114115917571](/home/ian/snap/typora/33/.config/Typora/typora-user-images/image-20210114115917571.png)
-
-![image-20210114115838023](/home/ian/snap/typora/33/.config/Typora/typora-user-images/image-20210114115838023.png)
-
 1. **Create K8 cluster**
 
    ```
