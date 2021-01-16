@@ -87,4 +87,7 @@ $ kubectl delete -f mongo-express.yaml
 $ helm uninstall mongodb
 $ kubectl delete -f mongodb-storageclass.yaml
 $ gcloud container clusters delete mongodb-gke-demo
+$ gcloud compute disks list
+$ gcloud compute disks delete <diskName>
 ```
+**Remember to delete the actual, physical storage in Google Compute Engine persistent disks**
