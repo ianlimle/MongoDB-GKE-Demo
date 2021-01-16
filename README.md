@@ -3,10 +3,11 @@ We will deploy a replicated database, configure its persistence and make it avai
 
 In detail we will deploy MongoDB on Google Kubernetes Engine using Helm. We will create replicated MongoDB using StatefulSet component and configure data persistence for MongoDB with Google Cloud Platform's cloud storage. Then we will deploy a MongoExpress, a UI client, for MongoDB database to access it from the browser. For this client we will configure NGINX Ingress Controller. So we will deploy Ingress Controller in the cluster and configure Ingress rule to route the request to MongoExpress internal Service.
 
+### Installation
 1. **Create K8 cluster**
 
    ```
-   $ gcloud container clusters create mongo-demo \
+   $ gcloud container clusters create mongodb-gke-demo \
    --zone asia-southeast1-b \
    --num-nodes "3"  
    ```
@@ -75,4 +76,15 @@ In detail we will deploy MongoDB on Google Kubernetes Engine using Helm. We will
    View the MongoExpress UI client from the browser
     ```
    http://<ADDRESS>
+   ```
+   
+   ### Clean up
+   ```
+   $ kubectl delete -f ingress.yaml
+   $ gcloud compute addresses delete mongo-demo-ip --global
+   $ helm uninstall nginx-ingress
+   $ kubectl delete -f mongo-express.yaml
+   $ helm uninstall mongodb
+   $ kubectl delete -f mongodb-storageclass.yaml
+   $ gcloud container clusters delete mongodb-gke-demo
    ```
