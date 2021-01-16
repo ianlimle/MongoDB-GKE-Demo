@@ -18,7 +18,7 @@
    ```
    $ kubectl apply -f mongodb-storageclass.yaml 
    ```
-   This is optional step: if you choose to skip this, comment out 'persistence' values in the mongodb-values.yaml file ie. 
+   This is optional step: if you choose to skip this, comment out 'persistence' values in the mongodb-values.yaml file 
    ```
    architecture: replicaset
    replicaCount: 3
@@ -58,7 +58,6 @@
    To view the details of the reservation
    ```
    $ gcloud compute addresses describe mongo-demo-ip --global
-   $ 
    ```
    To configure ingress rule
    ```
