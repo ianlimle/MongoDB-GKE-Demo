@@ -70,7 +70,7 @@ In detail we will deploy MongoDB on Google Kubernetes Engine using Helm. We will
    $ kubectl apply -f ingress.yaml
    ```
    To verify the ingress
-    ```
+   ```
    $ kubectl get ingress
    ```
    View the MongoExpress UI client from the browser
@@ -78,13 +78,13 @@ In detail we will deploy MongoDB on Google Kubernetes Engine using Helm. We will
    http://<ADDRESS>
    ```
    
-   ### Clean up
-   ```
-   $ kubectl delete -f ingress.yaml
-   $ gcloud compute addresses delete mongo-demo-ip --global
-   $ helm uninstall nginx-ingress
-   $ kubectl delete -f mongo-express.yaml
-   $ helm uninstall mongodb
-   $ kubectl delete -f mongodb-storageclass.yaml
-   $ gcloud container clusters delete mongodb-gke-demo
-   ```
+### Clean up
+```
+$ kubectl delete -f ingress.yaml
+$ gcloud compute addresses delete mongo-demo-ip --global
+$ helm uninstall nginx-ingress
+$ kubectl delete -f mongo-express.yaml
+$ helm uninstall mongodb
+$ kubectl delete -f mongodb-storageclass.yaml
+$ gcloud container clusters delete mongodb-gke-demo
+```
