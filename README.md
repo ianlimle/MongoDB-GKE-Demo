@@ -24,14 +24,12 @@ In detail we will deploy MongoDB on Google Kubernetes Engine using Helm. We will
    ```
    $ kubectl apply -f mongodb-storageclass.yaml 
    ```
-   This is optional step: if you choose to skip this, comment out 'persistence' values in the mongodb-values.yaml file 
+   This is an optional step: if you choose to skip this, comment out lines 3-4 in the mongodb-values.yaml file 
    ```
-   architecture: replicaset
-   replicaCount: 3
+   $ nano mongodb-values.yaml
+   
    #persistence:
    #  storageClass: ssd-storageclass
-   auth:
-     password: secret-root-pwd
    ```
    This will configure data persistence instead using standard persistent disks based on the default GKE storage class
 
