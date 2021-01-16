@@ -1,0 +1,7 @@
+architecture: replicaset
+replicaCount: 3
+persistence:
+  storageClass: ssd-storageclass
+auth:
+  password: secret-root-pwd
+

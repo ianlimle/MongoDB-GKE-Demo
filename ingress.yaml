@@ -1,0 +1,16 @@
+# $ gcloud compute addresses create mongo-demo-ip --global
+# the above command reserves a static external IP address for your application
+# the Ingress resource below is configured to use the static IP
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: mongo-express-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: mongo-demo-ip
+  labels:
+    app: mongo-express
+spec:
+  backend:
+    serviceName: mongo-express-svc
+    servicePort: 8081
+
