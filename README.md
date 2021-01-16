@@ -64,3 +64,11 @@
    ```
    $ kubectl apply -f ingress.yaml
    ```
+   To verify the ingress
+    ```
+   $ kubectl get ingress
+   ```
+   View the MongoExpress UI client from the browser
+    ```
+   http://<ADDRESS>
+   ```
