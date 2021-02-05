@@ -89,3 +89,18 @@ $ gcloud compute disks list
 $ gcloud compute disks delete <diskName>
 ```
 **Remember to delete the actual, physical storage in Google Compute Engine persistent disks**
+
+### Prometheus monitoring
+```
+$ helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+$ helm install prometheus prometheus-community/kube-prometheus-stack
+
+$ helm show values prometheus-community/prometheus-mongodb-exporter > values.yaml
+$ helm install mongodb-exporter prometheus-community/prometheus-mongodb-exporter -f values.yaml
+
+$ kubectl get service
+$ kubectl port-forward service mongodb-exporter-prometheus-mongodb-exporter <portNum>
+$ kubectl get deployment
+$ kubectl port-forward deployment/prometheus-grafana <portNum> 
+```
